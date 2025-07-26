@@ -13,14 +13,17 @@ namespace MulticastDelegatesAndEvents
         public Player(string name)
         {
             this.PlayerName = name;
+            //subscribe to the OnGameStart and OnGameOver events
+            GameEventManager.OnGameStart += StartGame;
+            GameEventManager.OnGameOver += EndGame;
         }
 
-        public void StartGame()
+        private void StartGame()
         {
             Console.WriteLine($"Spawning Player with ID : {PlayerName}");
         }
 
-        public void EndGame()
+        private void EndGame()
         {
             Console.WriteLine($"Removing Player with ID : {PlayerName}");
         }

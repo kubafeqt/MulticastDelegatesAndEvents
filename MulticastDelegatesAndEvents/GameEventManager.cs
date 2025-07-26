@@ -12,7 +12,7 @@ namespace MulticastDelegatesAndEvents
         public delegate void GameEvent();
 
         //create two delegates variables named OnGameStart and OnGameOver
-        public static GameEvent OnGameStart, OnGameOver;
+        public static event GameEvent OnGameStart, OnGameOver;
 
         public static void TriggerGameStart()
         {
